@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 
-export default function Home() {
+export default function About() {
   return (
 
 
@@ -12,43 +12,37 @@ export default function Home() {
 
     <section
       id="home"
-      className="flex min-h-[80vh] w-full flex-col items-center pt-[20vh] px-6 text-center bg-[url('/tree.jpg')] bg-cover bg-center bg-no-repeat]"
+      className="flex min-h-[60vh] w-full flex-col items-center pt-[20vh] px-6 text-center bg-[url('/tree.jpg')] bg-cover bg-center bg-no-repeat]"
     >
-      <h1 className="text-9xl font-bold text-[#F5F3EE]">
-        CHIFAN
+      <h1 className="text-7xl font-bold text-white">
+        About
       </h1>
 
-      <p className="mt-9 max-w-4xl text-white font-bold">
+      <p className="mt-8 max-w-2xl text-white font-bold">
         这是一个记录生活、学习与思考的个人网站。
       </p>
 
       </section>
-     {/* ==================== ABOUT SECTION ==================== */}
+      {/* About */}
+      <section
+        id="about"
+        className="w-full max-w-6xl px-6 py-24 "
+      ></section>
+
+      {/* ==================== ABOUT SECTION ==================== */}
 
         <section
           id="about"
-          className="w-full bg-white"
+          className="w-full max-w-6xl px-6 py-24"
         >
-          <div className="mx-auto flex w-full max-w-6xl items-center flex-col px-6 py-10">
-
-            {/* About 标题 */}
-            <h2 className="text-5xl font-bold">
-              介绍
-            </h2>
-
-            {/* About 正文区域 */}
-            <div className="mt-8">
-            哈喽，这里是jeremy(哲宇)的个人国内网站，会时不时更新一些个人所见所想的内容~
-            </div>
-
-          </div>
         </section>
+
 
         {/* ==================== NAVIGATION SECTION ==================== */}
 
-        <section className="fixed left-0 top-0 z-50 flex w-full bg-black/70 text-white bg-[#18251A] p-5">
+        <section className="fixed left-0 top-0 z-50 flex w-full justify-center bg-white p-5">
 
-          <nav className="flex w-full items-center justify-center gap-12">
+          <nav className="flex w-full items-center justify-center gap-12 px-0 py-0">
 
             {/* Home 标签 */}
             <Link
