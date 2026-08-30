@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import Navigation from "@/components/navigation";
 
 import { Button } from "@/components/ui/button";
 
@@ -38,40 +39,7 @@ export default function About() {
         </section>
 
 
-        {/* ==================== NAVIGATION SECTION ==================== */}
-
-        <section className="fixed left-0 top-0 z-50 flex w-full justify-center bg-white p-5">
-
-          <nav className="flex w-full items-center justify-center gap-12 px-0 py-0">
-
-            {/* Home 标签 */}
-            <Link
-              href="/"
-              className="rounded-xl px-4 py-2"
-            >
-              Home
-            </Link>
-
-
-            {/* About 标签 */}
-            <Link
-              href="/about"
-              className="rounded-xl px-4 py-2"
-            >
-              About
-            </Link>
-
-            {/* Diary 标签 */}
-            <Link
-              href="/diary"
-              className="rounded-xl px-4 py-2"
-            >
-              Diary
-            </Link>
-
-          </nav>
-
-        </section>
+        <Navigation/>
 
 
       

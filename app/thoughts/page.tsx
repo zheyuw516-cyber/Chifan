@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
+
 import Navigation from "@/components/navigation";
-import { sourceHanSerif } from "./fonts";
 
 import { Button } from "@/components/ui/button";
 
@@ -9,60 +9,22 @@ export default function Home() {
   return (
 
 
-    <div
-      className={`${sourceHanSerif.className} min-h-screen bg-neutral-100 text-neutral-900`}
-      >
+    <div className="min-h-screen bg-neutral-100 text-neutral-900">
       <main className="flex w-full flex-col items-center">
 
     <section
       id="home"
-      className="
-        flex
-        min-h-screen
-        w-full
-        flex-col
-        items-center
-        justify-center
-        px-6
-        text-center
-        bg-[url('/tree_house.png')]
-        bg-[length:110%_auto]
-        bg-center
-        bg-no-repeat
-      "
+      className="flex min-h-[80vh] w-full flex-col items-center pt-[20vh] px-6 text-center bg-[url('/tree.jpg')] bg-cover bg-center bg-no-repeat]"
     >
+      <h1 className="text-9xl font-bold text-[#F5F3EE]">
+        THOUGHTS
+      </h1>
 
-        {/* 深绿色半透明遮罩 */}
-      <div className="absolute inset-0 bg-[#0D1F14]/35" />
+      <p className="mt-9 max-w-4xl text-white font-bold">
+        这是一个记录生活、学习与思考的个人网站。
+      </p>
 
-          {/* 灯光 Hotspot */}
-      <div
-        className="
-          absolute
-          left-[50%]
-          top-[30%]
-          z-10
-          h-4
-          w-4
-          rounded-full
-          bg-amber-200/0
-          transition-all
-          duration-500
-          hover:bg-amber-200/30
-          hover:shadow-[0_0_45px_20px_rgba(253,230,138,0.35)]
-        "
-      />
-
-      <div className="relative z-10 w-full max-w-7xl -translate-y-20 px-12 text-left">
-        <h1 className="text-xl font-light text-[#F5F3EE]">
-          林中书屋 · CHIFAN
-        </h1>
-
-        <h2 className="mt-4 text-6xl font-light tracking-wider text-[#F5F3EE]">
-          记录生活，思考世界
-        </h2>
-      </div>
-    </section>
+      </section>
           {/* ==================== ABOUT SECTION ==================== */}
       <section
         id="about"
@@ -86,7 +48,7 @@ export default function Home() {
         </div>
       </section>
 
-       <Navigation/>
+        <Navigation/>
 
 
     
