@@ -2,6 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import { sourceHanSerif } from "./fonts";
+import MouseParticles from "@/components/MouseParticles";
+
 
 import { Button } from "@/components/ui/button";
 
@@ -12,6 +14,9 @@ export default function Home() {
     <div
       className={`${sourceHanSerif.className} min-h-screen bg-neutral-100 text-neutral-900`}
       >
+
+      <MouseParticles />
+
       <main className="flex w-full flex-col items-center">
 
     <section
