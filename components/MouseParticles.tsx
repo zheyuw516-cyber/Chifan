@@ -93,7 +93,7 @@ export default function MouseParticles() {
     window.addEventListener("click", handleClick);
 
     function animate() {
-      ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
+      context.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
       for (let i = particles.length - 1; i >= 0; i--) {
         const particle = particles[i];
