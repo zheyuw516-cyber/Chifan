@@ -27,11 +27,14 @@ export default function MouseParticles() {
 
     if (!ctx) return;
 
+    const canvasElement = canvas;
+    const context = ctx;
+
     const particles: Particle[] = [];   
 
     function resizeCanvas() {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+      canvasElement.width = window.innerWidth;
+      canvasElement.height = window.innerHeight;
     }
 
     resizeCanvas();
@@ -90,7 +93,7 @@ export default function MouseParticles() {
     window.addEventListener("click", handleClick);
 
     function animate() {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, canvasElement.width, canvasElement.height);
 
       for (let i = particles.length - 1; i >= 0; i--) {
         const particle = particles[i];
@@ -103,17 +106,17 @@ export default function MouseParticles() {
 
 
         //具体形状和粒子质感
-        ctx.beginPath();
+        context.beginPath();
 
-        ctx.moveTo(particle.x, particle.y - particle.size * 2);
-        ctx.lineTo(particle.x + particle.size, particle.y);
-        ctx.lineTo(particle.x, particle.y + particle.size * 2);
-        ctx.lineTo(particle.x - particle.size, particle.y);
+        context.moveTo(particle.x, particle.y - particle.size * 2);
+        context.lineTo(particle.x + particle.size, particle.y);
+        context.lineTo(particle.x, particle.y + particle.size * 2);
+        context.lineTo(particle.x - particle.size, particle.y);
 
-        ctx.closePath();
+        context.closePath();
 
-        ctx.fillStyle = `rgba(255, 240, 180, ${alpha})`;
-        ctx.fill();
+        context.fillStyle = `rgba(255, 240, 180, ${alpha})`;
+        context.fill();
         //
 
 
@@ -124,7 +127,7 @@ export default function MouseParticles() {
 
       requestAnimationFrame(animate);
     }
-    console.log("MouseParticles mounted");
+    console.log("Mouse  Particles mounted");
     animate();
     console.log("MouseParticles mounted");
     return () => {
