@@ -22,20 +22,26 @@ export default function Home() {
     <section
       id="home"
       className="
-        flex
-        min-h-screen
-        w-full
-        flex-col
-        items-center
-        justify-center
-        px-6
-        text-center
-        bg-[url('/tree_house.png')]
-        bg-[length:110%_auto]
-        bg-center
-        bg-no-repeat
-      "
+      relative
+      flex
+      min-h-screen
+      w-full
+      flex-col
+      items-center
+      justify-center
+      overflow-hidden
+      px-6
+      text-center
+    "
     >
+    {/* 背景图片 */}
+      <Image
+        src="/tree_house.png"
+        alt="林中书屋"
+        fill
+        priority
+        className="object-cover object-center"
+        />
 
         {/* 深绿色半透明遮罩 */}
       <div className="absolute inset-0 bg-[#0D1F14]/35" />
@@ -105,12 +111,14 @@ export default function Home() {
             items-center
             justify-center
             overflow-hidden
-            bg-[url('/forest.jpg')]
-            bg-cover
-            bg-center
-            bg-no-repeat
           "
         >
+          <Image
+            src="/forest.jpg"
+            alt="森林背景"
+            fill
+            className="object-cover object-center"
+          />
           {/* 半透明遮罩 */}
           <div className="absolute inset-0 bg-black/40" />
 
