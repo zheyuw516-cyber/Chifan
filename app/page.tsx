@@ -40,9 +40,9 @@ export default function Home() {
         alt="林中书屋"
         fill
         priority
+        unoptimized
         className="object-cover object-center"
-        />
-
+      />
         {/* 深绿色半透明遮罩 */}
       <div className="absolute inset-0 bg-[#0D1F14]/35" />
 
