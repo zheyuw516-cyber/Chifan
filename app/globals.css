@@ -118,12 +118,23 @@
 }
 
 @layer base {
+  /* 默认鼠标 */
   * {
     @apply border-border outline-ring/50;
+    cursor: url("/cursor/default.png") 6 6, auto;
   }
+
+  /* 鼠标悬停在可点击元素上 */
+  a:hover,
+  button:hover,
+  [role="button"]:hover {
+    cursor: url("/cursor/hover.png") 6 6, pointer;
+  }
+
   body {
     @apply bg-background text-foreground;
   }
+
   html {
     @apply font-sans;
   }
