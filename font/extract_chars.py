@@ -1,4 +1,5 @@
 from pathlib import Path
+from fontTools import subset
 
 SCRIPT_DIR = Path(__file__).resolve().parent
 
@@ -106,3 +107,57 @@ OUTPUT.write_text(
 
 print(f"Extracted {len(chars)} characters.")
 print(f"Saved to {OUTPUT}")
+
+# ==============================
+# 根据 characters.txt 生成字体子集
+# ==============================
+
+FONT_DIR = SCRIPT_DIR.parent / "font" / "SiYuanSongTiRegular"
+
+FONTS = [
+    (
+        FONT_DIR / "SourceHanSerifCN-Light-5.otf",
+        FONT_DIR / "SourceHanSerifCN-Light-subset.woff2",
+    ),
+    (
+        FONT_DIR / "SourceHanSerifCN-Regular-1.otf",
+        FONT_DIR / "SourceHanSerifCN-Regular-subset.woff2",
+    ),
+    (
+        FONT_DIR / "SourceHanSerifCN-Bold-2.otf",
+        FONT_DIR / "SourceHanSerifCN-Bold-subset.woff2",
+    ),
+]
+
+
+for input_font, output_font in FONTS:
+
+    print(f"Subsetting: {input_font.name}")
+
+    options = subset.Options()
+
+    # 输出 WOFF2
+    options.flavor = "woff2"
+
+    font = subset.load_font(
+        str(input_font),
+        options
+    )
+
+    subsetter = subset.Subsetter(options=options)
+
+    # 告诉 FontTools：
+    # 只保留 characters.txt 中出现的字符
+    subsetter.populate(
+        text="".join(chars)
+    )
+
+    subsetter.subset(font)
+
+    subset.save_font(
+        font,
+        str(output_font),
+        options
+    )
+
+    print(f"Created: {output_font.name}")

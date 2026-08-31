@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
-import { sourceHanSerif } from "./fonts";
+import { sourceHanSerif } from "../font/fonts";
 import MouseParticles from "@/components/MouseParticles";
 
 
@@ -67,7 +67,7 @@ export default function Home() {
       <div className="relative z-10 w-full max-w-7xl -translate-y-20 px-12 text-left">
         <h1 className="text-xl font-light text-[#F5F3EE]">
           林中书屋 · CHIFAN
-        </h1>
+        </h1> 
 
         <h2 className="mt-4 text-6xl font-light tracking-wider text-[#F5F3EE]">
           记录生活，思考世界(Testing)
@@ -139,16 +139,16 @@ export default function Home() {
             {/* ==================== VIDEO SECTION ==================== */}
       <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden">
 
-        {/* 第一层：背景视频 */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/Aurora.mp4" type="video/mp4" />
-        </video>
+       <video
+        loop
+        muted
+        playsInline
+        preload="none"
+        poster="/aurora-poster.jpg"
+        className="absolute inset-0 h-full w-full object-cover"
+      >
+        <source src="/Aurora.mp4" type="video/mp4" />
+      </video>
 
         {/* 第二层：半透明遮罩 */}
         <div className="absolute inset-0 bg-black/40" />
