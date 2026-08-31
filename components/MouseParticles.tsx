@@ -124,14 +124,15 @@ export default function MouseParticles() {
 
       requestAnimationFrame(animate);
     }
-
+    console.log("MouseParticles mounted");
     animate();
-
+    console.log("MouseParticles mounted");
     return () => {
         window.removeEventListener("resize", resizeCanvas);
         window.removeEventListener("mousemove", handleMouseMove);
         window.removeEventListener("click", handleClick);
     };
+    
   }, []);
 
   return (
