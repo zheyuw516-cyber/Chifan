@@ -64,7 +64,7 @@ export default function Home() {
         </h1>
 
         <h2 className="mt-4 text-6xl font-light tracking-wider text-[#F5F3EE]">
-          记录生活，思考世界
+          记录生活，思考世界(Testing)
         </h2>
       </div>
     </section>
