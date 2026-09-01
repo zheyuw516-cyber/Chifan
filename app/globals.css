@@ -139,3 +139,37 @@
     @apply font-sans;
   }
 }
+
+
+/* ============================= */
+/* Typography */
+/* ============================= */
+
+@layer components {
+
+  /* 首页等位置的超大标题 */
+  .display-title {
+    @apply text-4xl font-light tracking-wide sm:text-5xl md:text-6xl lg:text-7xl;
+  }
+
+  /* 一个页面的主标题 */
+  .page-title {
+    @apply text-3xl font-light tracking-wide sm:text-4xl md:text-5xl lg:text-6xl;
+  }
+
+  /* 页面中的区块标题 */
+  .section-title {
+    @apply text-3xl font-bold sm:text-4xl md:text-5xl;
+  }
+
+  /* 普通正文 */
+  .body-text {
+    @apply text-base leading-6 sm:text-lg sm:leading-7;
+  }
+
+  /* 小字、来源、辅助说明 */
+  .caption {
+    @apply text-sm leading-6;
+  }
+
+}

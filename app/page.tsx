@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import { sourceHanSerif } from "../font/fonts";
-import MouseParticles from "@/components/MouseParticles";
+
 
 
 import { Button } from "@/components/ui/button";
@@ -14,8 +14,6 @@ export default function Home() {
     <div
       className={`${sourceHanSerif.className} min-h-screen bg-neutral-100 text-neutral-900`}
       >
-
-      <MouseParticles />
 
       <main className="flex w-full flex-col items-center">
 
@@ -44,7 +42,7 @@ export default function Home() {
         className="object-cover object-center"
       />
         {/* 深绿色半透明遮罩 */}
-      <div className="absolute inset-0 bg-[#0D1F14]/35" />
+      <div className="absolute inset-0 bg-[#0D1F14]/15" />
 
           {/* 灯光 Hotspot */}
       <div
@@ -69,7 +67,7 @@ export default function Home() {
           林中书屋 · CHIFAN
         </h1> 
 
-        <h2 className="mt-4 text-6xl font-light tracking-wider text-[#F5F3EE]">
+        <h2 className="display-title mt-4 text-[#F5F3EE]">
           记录生活，思考世界(Testing)
         </h2>
       </div>
@@ -80,12 +78,12 @@ export default function Home() {
         className="relative w-full overflow-hidden bg-[url('/lake.jpg')] bg-cover bg-center bg-no-repeat"
       >
         {/* 半透明深绿色遮罩 */}
-        <div className="absolute inset-0 bg-[#142019]/65" />
+        <div className="absolute inset-0 bg-[#142019]/45" />
 
         {/* About 内容 */}
         <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-white">
 
-          <h2 className="text-5xl font-bold">
+          <h2 className="section-title">
             介绍
           </h2>
 
@@ -120,11 +118,11 @@ export default function Home() {
             className="object-cover object-center"
           />
           {/* 半透明遮罩 */}
-          <div className="absolute inset-0 bg-black/40" />
+          <div className="absolute inset-0 bg-black/30" />
 
           {/* 文字内容 */}
           <div className="relative z-10 ml-[50vw] px-6 text-right text-white">
-            <h2 className="text-6xl font-bold">
+            <h2 className="section-title font-bold">
               生活点滴
             </h2>
 
@@ -154,8 +152,8 @@ export default function Home() {
         <div className="absolute inset-0 bg-black/40" />
 
         {/* 第三层：文字内容 */}
-        <div className="relative z-10 ml-[-60vw] px-6 text-left text-white">
-          <h2 className="text-6xl font-bold">
+        <div className="relative z-10 ml-[-30vw] px-6 text-left text-white">
+          <h2 className="section-title font-bold">
             所思所想
           </h2>
 
@@ -165,11 +163,6 @@ export default function Home() {
         </div>
 
       </section>
-
-
-
-
-
 
     <footer className="py-6 text-center text-sm text-black/50">
               首页背景图片及视频来源：哲风壁纸
