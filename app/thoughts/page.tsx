@@ -1,132 +1,129 @@
 import Image from "next/image";
 import Link from "next/link";
-
 import Navigation from "@/components/navigation";
 
-import { Button } from "@/components/ui/button";
+const categories = [
+  {
+    title: "阅读笔记",
+    description: "从阅读中留下的问题、句子与启发。",
+    href: "/thoughts/reading",
+    className: "bg-[#364638]/85",
+  },
+  {
+    title: "生命思考",
+    description: "一些关于生活、成长与日常的思考。",
+    href: "/thoughts/life",
+    className: "bg-[#293D33]/85",
+  },
+];
 
-export default function Home() {
+export default function ThoughtsPage() {
   return (
+    <main className="relative min-h-screen overflow-hidden">
 
+      {/* ==================== 背景 ==================== */}
+      <Image
+        src="/tree_house.png"
+        alt="林中书屋"
+        fill
+        priority
+        unoptimized
+        className="object-cover object-center"
+      />
 
-    <div className="min-h-screen bg-neutral-100 text-neutral-900">
-      <main className="flex w-full flex-col items-center">
+      {/* 深绿色遮罩 */}
+      <div className="absolute inset-0 bg-[#0D1F14]/45" />
 
-    <section
-      id="home"
-      className="flex min-h-[80vh] w-full flex-col items-center pt-[20vh] px-6 text-center bg-[url('/tree.jpg')] bg-cover bg-center bg-no-repeat]"
-    >
-      <h1 className="text-9xl font-bold text-[#F5F3EE]">
-        THOUGHTS
-      </h1>
+      {/* Navigation */}
+      <Navigation />
 
-      <p className="mt-9 max-w-4xl text-white font-bold">
-        这是一个记录生活、学习与思考的个人网站。
-      </p>
+      {/* ==================== 页面内容 ==================== */}
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 pb-20 pt-32 md:px-12">
 
-      </section>
-          {/* ==================== ABOUT SECTION ==================== */}
-      <section
-        id="about"
-        className="relative w-full overflow-hidden bg-[url('/lake.jpg')] bg-cover bg-center bg-no-repeat"
-      >
-        {/* 半透明深绿色遮罩 */}
-        <div className="absolute inset-0 bg-[#142019]/65" />
+        {/* 标题 */}
+        <div className="mb-14">
+          <p className="text-sm tracking-[0.3em] text-[#D6C49A]">
+            THOUGHTS
+          </p>
 
-        {/* About 内容 */}
-        <div className="relative z-10 mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-white">
+          <h1 className="page-title mt-4 text-[#F5F3EE]">
+            想法见闻
+          </h1>
 
-          <h2 className="text-5xl font-bold">
-            介绍
-          </h2>
-
-          <div className="mt-8 text-lg font-bold">
-            哈喽，这里是 Jeremy（哲宇）的个人国内网站，
-            会时不时更新一些个人所见所想的内容~
-          </div>
-
-        </div>
-      </section>
-
-        <Navigation/>
-
-
-    
-            {/* ==================== IMAGE SECTION ==================== */}
-        <section
-          className="
-            relative
-            flex
-            min-h-[80vh]
-            w-full
-            items-center
-            justify-center
-            overflow-hidden
-            bg-[url('/forest.jpg')]
-            bg-cover
-            bg-center
-            bg-no-repeat
-          "
-        >
-          {/* 半透明遮罩 */}
-          <div className="absolute inset-0 bg-black/40" />
-
-          {/* 文字内容 */}
-          <div className="relative z-10 ml-[50vw] px-6 text-right text-white">
-            <h2 className="text-6xl font-bold">
-              生活点滴
-            </h2>
-
-            <p className="mt-6 text-lg">
-              生活中凝聚的片刻精彩会在这里呈现
-            </p>
-          </div>
-        </section>
-
-
-
-            {/* ==================== VIDEO SECTION ==================== */}
-      <section className="relative flex min-h-[80vh] w-full items-center justify-center overflow-hidden">
-
-        {/* 第一层：背景视频 */}
-        <video
-          autoPlay
-          loop
-          muted
-          playsInline
-          className="absolute inset-0 h-full w-full object-cover"
-        >
-          <source src="/Aurora.mp4" type="video/mp4" />
-        </video>
-
-        {/* 第二层：半透明遮罩 */}
-        <div className="absolute inset-0 bg-black/40" />
-
-        {/* 第三层：文字内容 */}
-        <div className="relative z-10 ml-[-60vw] px-6 text-left text-white">
-          <h2 className="text-6xl font-bold">
-            所思所想
-          </h2>
-
-          <p className="mt-6 text-lg">
-            去思考、去触碰、去感受，在这里看见不一样的视界和想法。
+          <p className="mt-5 max-w-xl text-lg leading-8 text-[#F5F3EE]/70">
+            一些阅读、学习、信仰与生活中留下的思考。
           </p>
         </div>
 
-      </section>
+        {/* ==================== 卡片区域 ==================== */}
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
 
+          {categories.map((item, index) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`
+                group
+                relative
+                flex
+                min-h-[260px]
+                flex-col
+                justify-end
+                overflow-hidden
+                rounded-[28px]
+                border
+                border-[#E5D6B5]/20
+                p-8
+                text-[#F5F3EE]
+                shadow-[0_12px_35px_rgba(0,0,0,0.18)]
+                transition-all
+                duration-300
+                hover:-translate-y-1
+                hover:border-[#E5D6B5]/45
+                hover:shadow-[0_18px_45px_rgba(0,0,0,0.28)]
+                md:p-10
+                ${item.className}
+              `}
+            >
 
+              {/* 卡片编号 */}
+              <p className="mb-auto text-sm tracking-[0.25em] text-[#D7C49A]/70">
+                0{index + 1}
+              </p>
 
+              {/* 内容 */}
+              <div>
+                <h2 className="text-3xl font-medium tracking-wide">
+                  {item.title}
+                </h2>
 
+                <p className="mt-4 max-w-md leading-7 text-[#F5F3EE]/65">
+                  {item.description}
+                </p>
 
+                <div
+                  className="
+                    mt-7
+                    flex
+                    items-center
+                    gap-2
+                    text-sm
+                    text-[#D7C49A]
+                    transition-all
+                    duration-300
+                    group-hover:gap-4
+                  "
+                >
+                  阅读更多
+                  <span>→</span>
+                </div>
+              </div>
 
-    <footer className="py-6 text-center text-sm text-black/50">
-              首页背景图片及视频来源：哲风壁纸
-    </footer>
+            </Link>
+          ))}
 
-
-        
-      </main>
-    </div>
+        </div>
+      </div>
+    </main>
   );
 }
