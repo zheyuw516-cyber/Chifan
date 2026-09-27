@@ -6,7 +6,7 @@ const categories = [
   {
     title: "阅读笔记",
     description: "从阅读中留下的问题、句子与启发。",
-    href: "/thoughts/reading",
+    href: "/thoughts/readingNotes",
     className: "bg-[#364638]/85",
   },
   {
