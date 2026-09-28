@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
+import PageBackground from "@/components/PageBackground";
 
 const categories = [
   {
@@ -22,13 +23,9 @@ export default function ThoughtsPage() {
     <main className="relative min-h-screen overflow-hidden">
 
       {/* ==================== 背景 ==================== */}
-      <Image
+      <PageBackground
         src="/tree_house.png"
         alt="林中书屋"
-        fill
-        priority
-        unoptimized
-        className="object-cover object-center"
       />
 
       {/* 深绿色遮罩 */}

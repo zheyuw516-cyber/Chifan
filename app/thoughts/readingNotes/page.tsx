@@ -1,11 +1,9 @@
 import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
+import PageBackground from "@/components/PageBackground";
 import { sourceHanSerif } from "@/font/fonts";
-
-
-
-import { Button } from "@/components/ui/button";
+import Bookshelf from "@/components/BookShelf";
 
 export default function Home() {
   return (
@@ -33,14 +31,10 @@ export default function Home() {
     "
     >
     {/* 背景图片 */}
-      <Image
-        src="/inner_house.png"
-        alt="林中书屋"
-        fill
-        priority
-        unoptimized
-        className="object-cover object-center"
-      />
+      <PageBackground
+         src="/inner_house.png"
+         alt="林中书屋"
+        />
         {/* 深绿色半透明遮罩 */}
       <div className="absolute inset-0 bg-[#0D1F14]/15" />
 
@@ -71,24 +65,11 @@ export default function Home() {
           记录生活，思考世界(Testing)
         </h2>
       </div>
+
+         <Bookshelf />
     </section>
         
        <Navigation/>
-
-
-    <div className="bookshelf">
-        <div className="shelf-row">
-            {/* books */}
-        </div>
-
-        <div className="shelf-row">
-            {/* books */}
-        </div>
-
-        <div className="shelf-row">
-            {/* books */}
-        </div>
-    </div>
 
 
 

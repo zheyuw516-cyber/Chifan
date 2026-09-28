@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Navigation from "@/components/navigation";
 import { sourceHanSerif } from "../font/fonts";
+import PageBackground from "@/components/PageBackground";
 
 
 
@@ -33,13 +34,9 @@ export default function Home() {
     "
     >
     {/* 背景图片 */}
-      <Image
+      <PageBackground
         src="/tree_house.png"
         alt="林中书屋"
-        fill
-        priority
-        unoptimized
-        className="object-cover object-center"
       />
         {/* 深绿色半透明遮罩 */}
       <div className="absolute inset-0 bg-[#0D1F14]/15" />
