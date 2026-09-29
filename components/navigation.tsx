@@ -16,7 +16,7 @@ export default function Navigation() {
           想法见闻
         </Link>
 
-        <Link href="/life" className="rounded-xl px-4 py-2">
+        <Link href="/lives" className="rounded-xl px-4 py-2">
           生活
         </Link>
       </nav>
